@@ -1,0 +1,14 @@
+h1 修改
+form(method="post")
+    "uid : "
+    input(type="text", name="uid", value="demo.uid")
+    br
+    "title:"
+    input(type="text", name="title", value="demo.title")
+    br
+    "content:"
+    textarea(name="content")="demo.content"
+    br
+    input(type="hidden", name="id", value="demo._id")
+    input(type="submit", value="submit")
+    input(type="reset", value="reset")
