@@ -31,21 +31,9 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/:href',function(req, res){
-	var href=req.params.href;
-	rjs.left();
+app.get('/', routes.index,function(req, res){
+	console.log('000');
 });
-
-
-// app.get('/page1', routes.slideLeft);
-// app.get('/page2', routes.index);
-// app.get('/page3', routes.index);
-// app.get('/page4', routes.index);
-// app.get('/page5', routes.index);
-// app.get('/page6', routes.index);
-// app.get('/page7', routes.index);
-// app.get('/page8', routes.index);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

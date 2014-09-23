@@ -14,15 +14,13 @@ var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.session({ secret: 'your secret here' }));
 app.use(app.router);
-app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -31,14 +29,16 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/page1', routes.index);
-app.get('/page2', routes.index);
-app.get('/page3', routes.index);
-app.get('/page4', routes.index);
-app.get('/page5', routes.index);
-app.get('/page6', routes.index);
-app.get('/page7', routes.index);
-app.get('/page8', routes.index);
+app.get('/users', user.list);
+app.get('/step1', function(res,req){
+	http.get("http://www.google.com/index.html", function(res) {
+	  console.log("Got response: " + res.statusCode);
+	  res.send("Got response: ");
+	}).on('error', function(e) {
+	  console.log("Got error: " + e.message);
+	  res.send('error');
+	});
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

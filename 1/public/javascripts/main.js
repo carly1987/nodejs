@@ -1,17 +1,14 @@
 requirejs.config({
-  baseUrl: '/public/javascripts',
+  baseUrl: '/javascripts/',
   paths: {
-  	"zepto": 'zepto'
-    transitions: 'transitions',
-    b: 'b'
+    transitions: 'transitions'
   }
 });
 require([
-	'zepto',
-    'transitions',
-    'b'
-],function(zepto,Transitions,b){
-    $('[data-transition="left"]').click(function(){
-    	Transitions.left();
+    'transitions'
+],function(Transitions){
+    Transitions.init();
+    $('[data-transition="slide"]').click(function(e){
+    	Transitions.slide(e);
     });
 });

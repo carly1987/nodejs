@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>滚动视觉差示例</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		#home{ 
+			background: url(home_bg.jpg) 50% 0 no-repeat fixed; min-height: 1000px; 
+			height: 1000px; 
+			margin: 0 auto; 
+			width: 100%; 
+			max-width: 1920px; 
+			position: relative; 
+		}
+		#home article{ 
+		  height: 458px; 
+		  position: absolute; 
+		  text-align: center; 
+		  top: 150px; 
+		  width: 100%;
+		  color: #fff;
+		} 
+		#about { 
+			background: url(about_bg.jpg) 50% 0 no-repeat fixed; min-height: 1000px;
+			height: 1000px; 
+		  margin: 0 auto; 
+		  width: 100%; 
+		  max-width: 1920px; 
+		  position: relative; 
+		  -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		  box-shadow: 0 0 50px rgba(0,0,0,0.8); 
+		}
+		#about article { 
+	  height: 458px; 
+	  position: absolute; 
+	  text-align: center; 
+	  top: 150px; 
+	  width: 100%; 
+	}
+	#footer { 
+			background: url(footer_bg.jpg) 50% 0 no-repeat fixed; min-height: 1000px; 
+			height: 1000px; 
+			margin: 0 auto; 
+			width: 100%; 
+			max-width: 1920px; 
+			position: relative; 
+		}
+	#footer article{ 
+		  height: 458px; 
+		  position: absolute; 
+		  text-align: center; 
+		  top: 150px; 
+		  width: 100%;
+		  color: #fff;
+		} 
+	</style>
+</head>
+<body>
+<section id="home" data-type="background" data-speed="10" class="pages">
+	<article>I am absolute positioned</article>
+</section>   
+	 
+<section id="about" data-type="background" data-speed="10" class="pages">
+	<article>Simple Parallax Scroll</article>
+</section>
+<section id="footer" data-type="background" data-speed="10" class="pages">
+	<article>footer</article>
+</section>
+<script src="jquery.js"></script>
+<script>
+$(function(){
+	$('section[data-type="background"]').each(function(){
+      var $bgobj = $(this);
+      $(window).scroll(function() {
+      	  var yPos = -($(window).scrollTop() / $bgobj.data('speed'));
+      	  console.log(yPos);
+      	  var coords = '50% '+ yPos + 'px';
+      	  $bgobj.css({ backgroundPosition: coords });
+      });
+  }); 
+});
+</script>
+</body>
+</html>
