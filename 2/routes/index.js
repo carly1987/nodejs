@@ -37,3 +37,16 @@ exports.edit = function(req, res){
   	id:id
   });
 };
+exports.del = function(req,res,next){
+	var id = url.parse(req.url).query;
+	id = qs.parse(id);
+	id = id["_id"];
+	user.del({_id:id},function(err,doc){
+		if(err){
+      res.redirect('/');
+    }
+    if(doc){
+      res.redirect('list');
+    }
+	});
+}

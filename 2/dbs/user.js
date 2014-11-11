@@ -52,3 +52,12 @@ exports.updatePass = function(options,callback){
         });
     });
 }
+exports.del = function(options,callback){
+    User.remove({_id:options._id},function(err,doc){
+        if(err){
+            util.log('FATAL '+ err);
+            callback(err, null); 
+        }
+        callback(null, doc);
+    });
+}

@@ -35,6 +35,7 @@ app.get('/register', routes.register);
 app.get('/login', routes.login);
 app.get('/list', routes.list);
 app.get('/edit', routes.edit);
+app.get('/del', routes.del);
 
 app.post('/register', user.register);
 app.post('/edit', user.edit);

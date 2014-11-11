@@ -14,7 +14,12 @@ exports.edit = function(req, res, next){
 	var id = req.body.id || '';
 	var name = req.body.name || '';
   var pass = req.body.pass || '';
-  user.updatePass({_id:id, pass:pass}, function(){
-  	res.redirect('/');
+  user.updatePass({_id:id, pass:pass}, function(err,doc){
+    if(err){
+      res.redirect('/');
+    }
+    if(doc){
+      res.redirect('list');
+    }
   });
 }

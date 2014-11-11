@@ -9,7 +9,7 @@
     <p>Welcome to <%= title %></p>
     <ul>
     	<% list.forEach(function(i){ %>
-		    <li><a href="edit?_id=<%= i._id%>&name=<%= i.name %>"><%= i.name %>：<%= i.pass %></a></li>
+		    <li><a href="edit?_id=<%= i._id%>&name=<%= i.name %>"><%= i.name %>：<%= i.pass %></a>---<a href="del?_id=<%= i._id%>">删除</a></li>
 		  <% }) %>
     </ul>
   </body>
