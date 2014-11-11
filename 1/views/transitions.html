@@ -1,0 +1,47 @@
+<% include head.html %>
+<div class="html nav-top nav-bottom" id="html">
+    <div class="header"><%=title%></div>
+    <div class="stage" id="stage" data-left="sec-page3" data-right="sec-page1,sec-a sec-b sec-c sec-d sec-e" data-top="sec-page2" data-bottom="sec-page4,sec-a-4,sec-b-4,sec-c-4,sec-d-4,sec-e-4" data-position="0,0">
+        <section id="sec-main">
+            <a id="test1">左</a>
+            <a id="test2">右</a>
+            <a id="test3">上</a>
+            <a id="test4">下</a>
+        </section>
+        <section id="sec-page1" data-position="right">
+            <a href="#a" data-direction="left" data-transition="slide">a</a>
+            <a href="#b" data-direction="left" data-transition="slide">b</a>
+            <a href="#c" data-direction="left" data-transition="slide">c</a>
+            <a href="#d" data-direction="left" data-transition="slide">d</a>
+            <a href="#e" data-direction="left" data-transition="slide">e</a>
+        </section>
+        <section id="sec-page2" style="background:#eee"><div style="height:800px;">page2</div></section>
+        <section id="sec-page3">page3</section>
+        <section id="sec-page4" style="background:#ddd">
+            <a href="#a-4" data-direction="top" data-transition="slide">a</a>
+            <a href="#b-4" data-direction="top" data-transition="slide">b</a>
+            <a href="#c-4" data-direction="top" data-transition="slide">c</a>
+            <a href="#d-4" data-direction="top" data-transition="slide">d</a>
+            <a href="#e-4" data-direction="top" data-transition="slide">e</a>
+        </section>
+        <section id="sec-a" data-position="right">a</section>
+        <section id="sec-b" data-position="right">b</section>
+        <section id="sec-c" data-position="right">c</section>
+        <section id="sec-d" data-position="right">d</section>
+        <section id="sec-e" data-position="right">e</section>
+        <section id="sec-a-4" data-position="bottom"><div style="height:100px">a-4</div></section>
+        <section id="sec-b-4" data-position="bottom"><div style="height:800px">b-4</div></section>
+        <section id="sec-c-4" data-position="bottom"><div style="height:300px">c-4</div></section>
+        <section id="sec-d-4" data-position="bottom"><div style="height:600px">d-4</div></section>
+        <section id="sec-e-4" data-position="bottom"><div style="height:700px">e-4</div></section>
+    </div>
+    <div class="footer">
+        <ul id="nav_ft_1" class="nav_ft navLine-ul">
+            <li><a href="#page1" data-direction="left" data-transition="slide">左</a></li>
+            <li><a href="#page2" data-direction="bottom" data-transition="slide">下</a></li>
+            <li><a href="#page3" data-direction="right" data-transition="slide">右</a></li>
+            <li><a href="#page4" data-direction="top" data-transition="slide">上</a></li>
+        </ul>
+    </div>
+</div>
+<% include foot.html %>

@@ -10,7 +10,9 @@ var http = require('http');
 var path = require('path');
 
 var app = express();
-
+var config = require('./config');
+var db = require('./dbs/db');
+var MongoStore = require('connect-mongo')(express);
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -29,17 +31,21 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
-app.get('/step1', function(res,req){
-	http.get("http://www.google.com/index.html", function(res) {
-	  console.log("Got response: " + res.statusCode);
-	  res.send("Got response: ");
-	}).on('error', function(e) {
-	  console.log("Got error: " + e.message);
-	  res.send('error');
-	});
-});
+app.get('/register', routes.register);
+app.get('/login', routes.login);
+app.get('/list', routes.list);
+app.get('/edit', routes.edit);
 
+app.post('/register', user.register);
+app.post('/edit', user.edit);
+
+
+db.connect(function(error){
+    if (error) throw error;
+});
+app.on('close', function(errno) {
+    db.disconnect(function(err) { });
+});
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

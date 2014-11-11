@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head> 
+<title>test</title>
+<style>
+#parallax {
+	position:relative; 
+	overflow:hidden;
+	width:100%;
+	margin:auto;
+	height:366px; 
+	z-index:1;
+	top:54px;
+	left:0px;
+}
+
+.layer-1 {
+	width:800px;
+	background:#ff0000;
+	height:218px;
+}
+.layer-2 {
+	width:800px;
+	background:#000;
+	height:366px;
+}
+.layer-3 {
+	width:800px;
+	background:#ccc;
+	height:307px;
+}
+@media only screen and (min-width:1224px){
+	 .layer-1,
+	 .layer-2,
+	 .layer-3{width: 1000px;} 
+}
+@media only screen and (max-width:800px){
+	 .layer-1,
+	 .layer-2,
+	 .layer-3{width: 300px;} 
+}
+@media only screen and (max-width:320px){
+	 .layer-1,
+	 .layer-2,
+	 .layer-3{width: 100px;} 
+}
+</style>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="test.js"></script>				
+<script type="text/javascript">
+$(function(){
+	$('#parallax').jparallax({});
+	jQuery(window).resize(function(){
+		
+	});
+});
+</script> 
+</head>
+<body>
+<div id="parallax">
+	<div class="layer-1"></div>
+	<div class="layer-2"></div>
+	<div class="layer-3"></div>
+	<div class="layer-4"></div>
+</div>
+</body></html>

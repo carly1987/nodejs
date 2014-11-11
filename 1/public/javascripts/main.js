@@ -7,8 +7,8 @@ requirejs.config({
 require([
     'transitions'
 ],function(Transitions){
-    Transitions.init();
-    $('[data-transition="slide"]').click(function(e){
-    	Transitions.slide(e);
-    });
+		Transitions.init();
+		$('[data-transition="slide"]').click(function(e){
+			Transitions.slide(e);
+	});
 });

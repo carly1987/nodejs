@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form method="post">
+    	<label>用户名：</label><input type="text" name="name" value="<%= name%>" readonly><br/>
+    	<label>密码：</label><input type="text" name="pass"><br/>
+      <input type="hidden" name="id" value="<%= id%>">
+    	<input type="submit" value="修改">
+    </form>
+  </body>
+</html>
