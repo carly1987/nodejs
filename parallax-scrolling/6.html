@@ -20,39 +20,21 @@
 	height:218px;
 }
 .layer-2 {
-	width:800px;
+	width:700px;
 	background:#000;
 	height:366px;
 }
 .layer-3 {
-	width:800px;
+	width:600px;
 	background:#ccc;
 	height:307px;
 }
-@media only screen and (min-width:1224px){
-	 .layer-1,
-	 .layer-2,
-	 .layer-3{width: 1000px;} 
-}
-@media only screen and (max-width:800px){
-	 .layer-1,
-	 .layer-2,
-	 .layer-3{width: 300px;} 
-}
-@media only screen and (max-width:320px){
-	 .layer-1,
-	 .layer-2,
-	 .layer-3{width: 100px;} 
-}
 </style>
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<script type="text/javascript" src="test.js"></script>				
+<script type="text/javascript" src="assets/js/lib/jquery.js"></script>
+<script type="text/javascript" src="assets/js/lib/jquery.jparallax.js"></script>				
 <script type="text/javascript">
 $(function(){
 	$('#parallax').jparallax({});
-	jQuery(window).resize(function(){
-		
-	});
 });
 </script> 
 </head>
